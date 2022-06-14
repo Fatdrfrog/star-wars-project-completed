@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { DefaultContext } from "./Contexts";
 //importing styles
 import "./app.css";
 
@@ -14,10 +15,10 @@ export default function App() {
   };
 
   return (
-    <>
-      <Header fan={fan} />
+    <DefaultContext.Provider value={{ handleChooseFan, fan }}>
+      <Header />
       <hr />
-      <Content handleChooseFan={handleChooseFan} />
-    </>
+      <Content />
+    </DefaultContext.Provider>
   );
 }

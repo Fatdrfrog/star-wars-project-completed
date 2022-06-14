@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { DefaultContext } from "../../Contexts";
+
 import { ReactComponent as StarWarsLogoSVG } from "../../assets/star-wars.svg";
 import { ReactComponent as IconSearchSVG } from "../../assets/icon-search.svg";
 import { ReactComponent as FacebookLogoSVG } from "../../assets/facebook.svg";
@@ -29,7 +32,9 @@ const swLinks = [
   },
 ];
 
-export const Header = ({ fan }) => {
+export const Header = () => {
+  const { fan } = useContext(DefaultContext);
+
   return (
     <header>
       <div className="links-layout">
